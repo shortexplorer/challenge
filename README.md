@@ -15,9 +15,7 @@ While we encourage using C# and Microsoft SQL Server, please use whatever langua
 
 
 **Product**
-
 A Product record is the basic information about the Product that a seller carries.
-
 | **Field Name** | **Data Type** |
 | --- | --- |
 | ProductID | PK |
@@ -27,9 +25,7 @@ A Product record is the basic information about the Product that a seller carrie
 
 
 **Order**
-
 Orders are placed by a customer for one or more products
-
 | **Field Name** | **Data Type** |
 | --- | --- |
 | OrderNumber | String (unique) |
@@ -38,9 +34,7 @@ Orders are placed by a customer for one or more products
 | CustomerAddress | string |
 
 **Order Lines**
-
 Order lines are related to an Order, and specify what Product has been ordered, and how many
-
 | **Field Name** | **Data Type** |
 | --- | --- |
 | OrderLineID | PK |
@@ -51,9 +45,7 @@ Order lines are related to an Order, and specify what Product has been ordered, 
 
 
 **Bins**
-
 Bins are the individual shelves, pallets, or other areas in the warehouse where inventory is located
-
 | **Field Name** | **Data Type** |
 | --- | --- |
 | BinID | PK |
@@ -64,9 +56,7 @@ Bins are the individual shelves, pallets, or other areas in the warehouse where 
 **Inventory**
 
 Inventory records point to the Product in inventory, and the Bin that it is stored in.
-
 There should not be multiple rows for the same Product and Bin.
-
 Zero QTYs do not need to be stored.
 
 | **Field Name** | **Data Type** |
