@@ -8,23 +8,23 @@ CREATE TABLE Product
 (ProductID int NOT NULL auto_increment,
 SKU char(10) NOT NULL UNIQUE,
 ProductDescription varchar(30) NOT NULL,
-PRIMARY KEY (ProductId)
+PRIMARY KEY (ProductID)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 1;
 
 CREATE TABLE `Order`
-(OrderID int NOT NULL auto_increment,
+(OrderNumber char(15) NOT NULL UNIQUE,
 DateOrdered datetime NOT NULL,
 CustomerName varchar(50) NOT NULL,
 CustomerAddress varchar(100) NOT NULL,
-PRIMARY KEY (OrderID)
+PRIMARY KEY (OrderNumber)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 1;
 
 CREATE TABLE OrderLine
 (OrderLineID int NOT NULL auto_increment,
-OrderID int NOT NULL,
+OrderID char(15) NOT NULL,
 ProductID int NOT NULL,
 PRIMARY KEY (OrderLineID),
-FOREIGN KEY (OrderID) REFERENCES `Order` (OrderID),
+FOREIGN KEY (OrderID) REFERENCES `Order` (OrderNumber),
 FOREIGN KEY (ProductID) REFERENCES Product (ProductID)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT = 1;
 

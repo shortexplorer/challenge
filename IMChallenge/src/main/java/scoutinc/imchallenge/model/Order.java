@@ -15,17 +15,17 @@ import java.util.Objects;
  */
 public class Order {
     
-    private int orderId;
+    private int orderNumber;
     private LocalDate dateOrdered;
     private String customerName;
     private String customerAddress;
 
-    public int getOrderId() {
-        return orderId;
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public LocalDate getDateOrdered() {
@@ -54,11 +54,11 @@ public class Order {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + this.orderId;
-        hash = 17 * hash + Objects.hashCode(this.dateOrdered);
-        hash = 17 * hash + Objects.hashCode(this.customerName);
-        hash = 17 * hash + Objects.hashCode(this.customerAddress);
+        int hash = 3;
+        hash = 41 * hash + this.orderNumber;
+        hash = 41 * hash + Objects.hashCode(this.dateOrdered);
+        hash = 41 * hash + Objects.hashCode(this.customerName);
+        hash = 41 * hash + Objects.hashCode(this.customerAddress);
         return hash;
     }
 
@@ -74,7 +74,7 @@ public class Order {
             return false;
         }
         final Order other = (Order) obj;
-        if (this.orderId != other.orderId) {
+        if (this.orderNumber != other.orderNumber) {
             return false;
         }
         if (!Objects.equals(this.customerName, other.customerName)) {
